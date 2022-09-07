@@ -5,33 +5,56 @@
       <div class="text">
         <p>Vue3练习</p>
         <p><a href="https://cn.vuejs.org">vue：https://cn.vuejs.org</a></p>
-        <p><a href="https://router.vuejs.org/">vue-router: https://router.vuejs.org</a></p>
+        <p>
+          <a href="https://router.vuejs.org/">vue-router: https://router.vuejs.org</a>
+        </p>
       </div>
     </div>
     <div class="right-content">
       <section class="navigation">
-        <el-button type="success" text @click="btnClick()">响应式练习(组合式api)</el-button>
+        <el-button
+          v-for="item in buttonData"
+          :key="item.path"
+          type="success"
+          text
+          @click="btnClick(item.path)"
+        >
+          {{ item.title }}
+        </el-button>
       </section>
     </div>
   </main>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: "Home",
-  data(){
+  name: 'Home',
+  data() {
     return {
-
-    }
+      buttonData: [
+        {
+          path: '/reactive',
+          title: '响应式练习(组合式api)',
+        },
+        {
+          path: '/computed',
+          title: '计算属性(组合式api)'
+        },
+        {
+          path: '/lifecycle',
+          title: '生命周期阶段'
+        }
+      ],
+    };
   },
   methods: {
-    btnClick: function(){
-      this.$router.push('/reactive')
-    }
-  }
-})
+    btnClick: function (path: string) {
+      this.$router.push(path);
+    },
+  },
+});
 </script>
 
 <style scoped>
@@ -45,8 +68,7 @@ a {
   color: hsla(160, 100%, 37%, 1);
 }
 
-
-.text p:nth-of-type(1){
+.text p:nth-of-type(1) {
   font-size: 30px;
 }
 
@@ -56,7 +78,8 @@ main {
   background-color: var(--vt-c-white);
 }
 
-.left-content, .right-content{
+.left-content,
+.right-content {
   display: flex;
   flex: 1;
   justify-content: center;
@@ -83,5 +106,4 @@ main {
   /*border: 1px solid var(--color-border);*/
   overflow-y: auto;
 }
-
 </style>
