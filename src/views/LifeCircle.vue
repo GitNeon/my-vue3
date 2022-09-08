@@ -10,7 +10,16 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onBeforeMount, onMounted, reactive } from 'vue';
+import {
+  computed,
+  onBeforeMount,
+  onBeforeUnmount,
+  onBeforeUpdate,
+  onMounted,
+  onUnmounted,
+  onUpdated,
+  reactive,
+} from 'vue';
 import { formatDate } from '@/utils/DataUitl';
 
 const state: any[] = reactive([]);
@@ -18,7 +27,7 @@ const state: any[] = reactive([]);
 onBeforeMount(() => {
   state.push({
     time: formatDate(new Date(), 'yyyy-MM-dd hh:mm:ss'),
-    text: 'onBeforeMount生命周期阶段',
+    text: 'onBeforeMount -- 组件挂载前 -- 生命周期阶段',
   });
 });
 
@@ -26,7 +35,35 @@ onMounted(() => {
   // 组件已挂载
   state.push({
     time: formatDate(new Date(), 'yyyy-MM-dd hh:mm:ss'),
-    text: 'onMounted生命周期阶段',
+    text: 'onMounted -- 组件已挂载 -- 生命周期阶段',
+  });
+});
+
+onBeforeUpdate(() => {
+  state.push({
+    time: formatDate(new Date(), 'yyyy-MM-dd hh:mm:ss'),
+    text: 'onBeforeUpdate -- 组件更新前 -- 生命周期阶段',
+  });
+});
+
+onUpdated(() => {
+  state.push({
+    time: formatDate(new Date(), 'yyyy-MM-dd hh:mm:ss'),
+    text: 'onUpdated -- 组件已更新 -- 生命周期阶段',
+  });
+});
+
+onBeforeUnmount(() => {
+  state.push({
+    time: formatDate(new Date(), 'yyyy-MM-dd hh:mm:ss'),
+    text: 'onBeforeUnmount -- 组件卸载前 -- 生命周期阶段',
+  });
+});
+
+onUnmounted(() => {
+  state.push({
+    time: formatDate(new Date(), 'yyyy-MM-dd hh:mm:ss'),
+    text: 'onBeforeUnmount -- 组件已卸载 -- 生命周期阶段',
   });
 });
 </script>

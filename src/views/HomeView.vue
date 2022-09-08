@@ -12,6 +12,9 @@
     </div>
     <div class="right-content">
       <section class="navigation">
+        <el-divider content-position="left"
+          ><span style="font-size: 16px">组合式api</span></el-divider
+        >
         <el-button
           v-for="item in buttonData"
           :key="item.path"
@@ -36,16 +39,20 @@ export default defineComponent({
       buttonData: [
         {
           path: '/reactive',
-          title: '响应式练习(组合式api)',
+          title: '响应式练习',
         },
         {
           path: '/computed',
-          title: '计算属性(组合式api)'
+          title: '计算属性',
         },
         {
           path: '/lifecycle',
-          title: '生命周期阶段'
-        }
+          title: '生命周期阶段',
+        },
+        {
+          path: '/watch',
+          title: '侦听器',
+        },
       ],
     };
   },

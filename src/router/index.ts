@@ -32,6 +32,11 @@ const router = createRouter({
       name: 'Lifecycle',
       component: () => import('../views/LifeCircle.vue'),
     },
+    {
+      path: '/watch',
+      name: 'Watch',
+      component: () => import('../views/Watch.vue'),
+    },
   ],
 });
 
