@@ -37,6 +37,19 @@ const router = createRouter({
       name: 'Watch',
       component: () => import('../views/Watch.vue'),
     },
+    {
+      path: '/domRef',
+      name: 'DomRef',
+      component: () => import('../views/DOMRef.vue'),
+    },
+    {
+      path: '/parentChild',
+      component: () => import('../views/ParentChild/ButtonContainer.vue'),
+    },
+    {
+      path: '/event',
+      component: () => import('../views/Event/Index.vue'),
+    },
   ],
 });
 

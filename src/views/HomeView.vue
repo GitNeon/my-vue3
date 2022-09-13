@@ -53,6 +53,18 @@ export default defineComponent({
           path: '/watch',
           title: '侦听器',
         },
+        {
+          path: '/domRef',
+          title: 'Dom引用',
+        },
+        {
+          path: '/parentChild',
+          title: '父子组件',
+        },
+        {
+          path: '/event',
+          title: '事件处理',
+        },
       ],
     };
   },
