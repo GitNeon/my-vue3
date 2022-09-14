@@ -50,6 +50,10 @@ const router = createRouter({
       path: '/event',
       component: () => import('../views/Event/Index.vue'),
     },
+    {
+      path: '/slot',
+      component: () => import('../views/Slot/Index.vue'),
+    },
   ],
 });
 

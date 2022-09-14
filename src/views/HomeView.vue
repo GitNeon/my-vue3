@@ -65,6 +65,10 @@ export default defineComponent({
           path: '/event',
           title: '事件处理',
         },
+        {
+          path: '/slot',
+          title: '插槽Slots',
+        },
       ],
     };
   },
