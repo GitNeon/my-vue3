@@ -58,7 +58,7 @@ export default defineComponent({
           title: 'Dom引用',
         },
         {
-          path: '/parentChild',
+          path: '/pc',
           title: '父子组件',
         },
         {
@@ -68,6 +68,14 @@ export default defineComponent({
         {
           path: '/slot',
           title: '插槽Slots',
+        },
+        {
+          path: '/compose',
+          title: '组合式函数复用',
+        },
+        {
+          path: '/transition',
+          title: '过渡动画(Transition)',
         },
       ],
     };

@@ -43,8 +43,8 @@ const router = createRouter({
       component: () => import('../views/DOMRef.vue'),
     },
     {
-      path: '/parentChild',
-      component: () => import('../views/ParentChild/ButtonContainer.vue'),
+      path: '/pc',
+      component: () => import('../views/Pc/Index.vue'),
     },
     {
       path: '/event',
@@ -53,6 +53,14 @@ const router = createRouter({
     {
       path: '/slot',
       component: () => import('../views/Slot/Index.vue'),
+    },
+    {
+      path: '/compose',
+      component: () => import('../views/Composables/Index.vue'),
+    },
+    {
+      path: '/transition',
+      component: () => import('../views/Transition/Index.vue'),
     },
   ],
 });

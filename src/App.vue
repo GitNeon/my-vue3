@@ -1,16 +1,13 @@
 <template>
-    <RouterView/>
+  <router-view v-slot="{ Component }">
+    <SlideTransition>
+      <component :is="Component"></component>
+    </SlideTransition>
+  </router-view>
 </template>
 
-<script lang="ts">
-
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  name: 'app',
-})
+<script setup lang="ts">
+import SlideTransition from '@/views/Transition/SlideTransition.vue';
 </script>
 
-<style>
-
-</style>
+<style></style>
