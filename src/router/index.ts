@@ -8,6 +8,9 @@ const router = createRouter({
       path: '/',
       name: 'Home',
       component: HomeView,
+      beforeEnter: (to, from) => {
+        console.log('Home组件独享守卫---beforeEnter');
+      },
     },
     {
       path: '/about',
@@ -97,6 +100,18 @@ const router = createRouter({
       ],
     },
   ],
+});
+
+router.beforeEach((to, from) => {
+  console.log('全局前置守卫', 'beforeEach', to, from);
+});
+
+router.beforeResolve((to, from) => {
+  console.log('全局解析守卫', 'beforeResolve', to, from);
+});
+
+router.afterEach((to, from) => {
+  console.log('全局后置守卫', 'afterEach', to, from);
 });
 
 export default router;

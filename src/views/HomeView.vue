@@ -34,6 +34,15 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Home',
+  beforeRouteEnter() {
+    console.log('Home组件内守卫---beforeRouteEnter，此时该组件实例还没有创建');
+  },
+  beforeRouteUpdate() {
+    console.log('Home组件内守卫---beforeRouteUpdate，在当前路由改变，但是该组件被复用时调用');
+  },
+  beforeRouteLeave() {
+    console.log('Home组件内守卫---beforeRouteLeave', '离开了该组件');
+  },
   data() {
     return {
       buttonData: [
