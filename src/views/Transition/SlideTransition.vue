@@ -1,4 +1,5 @@
 <!-- 封装的可复用的动画组件 -->
+<!--suppress CssUnusedSymbol -->
 <template>
   <Transition name="fade" appear mode="out-in">
     <!-- 向插槽传递内容 -->

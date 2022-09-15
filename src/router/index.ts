@@ -62,6 +62,10 @@ const router = createRouter({
       path: '/transition',
       component: () => import('../views/Transition/Index.vue'),
     },
+    {
+      path: '/transitionGroup',
+      component: () => import('../views/TransitionGroup/Index.vue'),
+    },
   ],
 });
 

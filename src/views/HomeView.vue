@@ -77,6 +77,10 @@ export default defineComponent({
           path: '/transition',
           title: '过渡动画(Transition)',
         },
+        {
+          path: '/transitionGroup',
+          title: '过渡动画(TransitionGroup)',
+        },
       ],
     };
   },
