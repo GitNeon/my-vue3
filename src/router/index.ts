@@ -71,12 +71,28 @@ const router = createRouter({
       component: () => import('../views/NestedRoutes/Index.vue'),
       children: [
         {
-          path: 'ItemOne',
+          path: 'ItemOne/:id',
           component: () => import('../views/NestedRoutes/Item/ItemOne.vue'),
         },
         {
           path: 'ItemTwo',
           component: () => import('../views/NestedRoutes/Item/ItemTwo.vue'),
+        },
+        {
+          path: 'ItemThree/:username',
+          props: true,
+          component: () => import('../views/NestedRoutes/Item/ItemThree.vue'),
+        },
+        {
+          path: 'ItemFour',
+          props: {
+            name: 'xiaoming',
+            age: 18,
+            address: {
+              code: '002355555',
+            },
+          },
+          component: () => import('../views/NestedRoutes/Item/ItemFour.vue'),
         },
       ],
     },

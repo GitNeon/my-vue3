@@ -19,11 +19,11 @@
               <el-menu-item index="1-2" @click="onItemClick">item two</el-menu-item>
             </el-menu-item-group>
             <el-menu-item-group title="Group Two">
-              <el-menu-item index="1-3">item three</el-menu-item>
+              <el-menu-item index="1-3" @click="onItemClick">item three</el-menu-item>
             </el-menu-item-group>
             <el-sub-menu index="1-4">
               <template #title>item four</template>
-              <el-menu-item index="1-4-1">item one</el-menu-item>
+              <el-menu-item index="1-4-1" @click="onItemClick">item one</el-menu-item>
             </el-sub-menu>
           </el-sub-menu>
           <el-menu-item index="2">
@@ -64,12 +64,26 @@ const handleClose = (key: string, keyPath: string[]) => {
 const onItemClick = (item: any) => {
   console.log(item);
   if (item.index === '1-1') {
-    router.push('/nestedRoute/ItemOne');
+    // 通过params传参
+    router.push('/nestedRoute/ItemOne/32');
     return;
   }
 
   if (item.index === '1-2') {
-    router.push('/nestedRoute/ItemTwo');
+    router.push({
+      path: '/nestedRoute/ItemTwo',
+      query: { name: '小明', age: 18 },
+    });
+    return;
+  }
+
+  if (item.index === '1-3') {
+    router.push('/nestedRoute/ItemThree/xiaoming');
+    return;
+  }
+
+  if (item.index === '1-4-1') {
+    router.push('/nestedRoute/ItemFour');
     return;
   }
 };
