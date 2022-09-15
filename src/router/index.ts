@@ -66,6 +66,20 @@ const router = createRouter({
       path: '/transitionGroup',
       component: () => import('../views/TransitionGroup/Index.vue'),
     },
+    {
+      path: '/nestedRoute',
+      component: () => import('../views/NestedRoutes/Index.vue'),
+      children: [
+        {
+          path: 'ItemOne',
+          component: () => import('../views/NestedRoutes/Item/ItemOne.vue'),
+        },
+        {
+          path: 'ItemTwo',
+          component: () => import('../views/NestedRoutes/Item/ItemTwo.vue'),
+        },
+      ],
+    },
   ],
 });
 

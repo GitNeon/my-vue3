@@ -81,6 +81,10 @@ export default defineComponent({
           path: '/transitionGroup',
           title: '过渡动画(TransitionGroup)',
         },
+        {
+          path: '/nestedRoute',
+          title: '嵌套路由的使用',
+        },
       ],
     };
   },
