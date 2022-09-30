@@ -94,6 +94,14 @@ export default defineComponent({
           path: '/nestedRoute',
           title: '嵌套路由的使用',
         },
+        {
+          path: '/big_screen_spxf',
+          title: '大屏_商品消费',
+        },
+        {
+          path: '/big_screen_fwxf',
+          title: '大屏_服务消费',
+        },
       ],
     };
   },

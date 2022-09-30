@@ -99,6 +99,14 @@ const router = createRouter({
         },
       ],
     },
+    {
+      path: '/big_screen_spxf',
+      component: () => import('../views/big_screen_spxf/index.vue'),
+    },
+    {
+      path: '/big_screen_fwxf',
+      component: () => import('../views/big_screen_fwxf/index.vue'),
+    },
   ],
 });
 
