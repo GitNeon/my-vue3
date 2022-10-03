@@ -19,10 +19,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      TweenMax: fileURLToPath(new URL('./public/lib/green-sock/TweenMax.min.js', import.meta.url)),
-      TimelineMax: fileURLToPath(
-        new URL('./public/lib/green-sock/TimelineMax.min.js', import.meta.url),
-      ),
     },
   },
 });
