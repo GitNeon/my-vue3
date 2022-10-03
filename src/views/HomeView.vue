@@ -8,6 +8,7 @@
         <p>
           <a href="https://router.vuejs.org/">vue-router: https://router.vuejs.org</a>
         </p>
+        <p>当前运行环境变量：APP_ENV_NAME = {{ appName }}</p>
       </div>
     </div>
     <div class="right-content">
@@ -43,8 +44,12 @@ export default defineComponent({
   beforeRouteLeave() {
     console.log('Home组件内守卫---beforeRouteLeave', '离开了该组件');
   },
+  mounted() {
+    console.log('import.meta.env:', import.meta.env);
+  },
   data() {
     return {
+      appName: import.meta.env.VITE_APP_ENV_NAME,
       buttonData: [
         {
           path: '/reactive',
@@ -93,14 +98,6 @@ export default defineComponent({
         {
           path: '/nestedRoute',
           title: '嵌套路由的使用',
-        },
-        {
-          path: '/big_screen_spxf',
-          title: '大屏_商品消费',
-        },
-        {
-          path: '/big_screen_fwxf',
-          title: '大屏_服务消费',
         },
       ],
     };

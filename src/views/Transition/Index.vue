@@ -23,8 +23,8 @@ import { ref } from 'vue';
 
 const show = ref(true);
 
-const tabs_component = { ComponentA, ComponentB };
-const default_tabs = ref('ComponentA');
+const tabs_component: any = { ComponentA, ComponentB };
+const default_tabs = ref<string>('ComponentA');
 
 function toggleShow() {
   show.value = !show.value;
