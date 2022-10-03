@@ -99,6 +99,10 @@ const router = createRouter({
         },
       ],
     },
+    {
+      path: '/gsap',
+      component: () => import('../views/Gsap/Index.vue'),
+    },
   ],
 });
 

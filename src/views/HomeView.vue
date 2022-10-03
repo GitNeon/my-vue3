@@ -99,6 +99,10 @@ export default defineComponent({
           path: '/nestedRoute',
           title: '嵌套路由的使用',
         },
+        {
+          path: '/gsap',
+          title: 'Gsap的使用',
+        },
       ],
     };
   },
