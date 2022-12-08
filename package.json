@@ -13,6 +13,7 @@
     "@element-plus/icons-vue": "^2.0.9",
     "echarts": "^5.1.1",
     "element-plus": "^2.2.16",
+    "element-resize-detector": "^1.2.4",
     "gsap": "^3.11.2",
     "node-sass": "^7.0.3",
     "pinia": "^2.0.21",

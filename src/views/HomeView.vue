@@ -13,16 +13,16 @@
     </div>
     <div class="right-content">
       <section class="navigation">
-        <el-divider content-position="left"
-          ><span style="font-size: 16px">组合式api</span></el-divider
-        >
-        <el-button
-          v-for="item in buttonData"
-          :key="item.path"
-          type="success"
-          text
-          @click="btnClick(item.path)"
-        >
+        <el-divider content-position="left">
+          <span style="font-size: 16px">组合式api</span>
+        </el-divider>
+        <el-button v-for="item in buttonData" :key="item.path" type="success" text @click="btnClick(item.path)">
+          {{ item.title }}
+        </el-button>
+        <el-divider content-position="left">
+          <span style="font-size: 16px">项目通用</span>
+        </el-divider>
+        <el-button v-for="item in buttonData2" :key="item.path" type="success" text @click="btnClick(item.path)">
           {{ item.title }}
         </el-button>
       </section>
@@ -31,21 +31,21 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'Home',
   beforeRouteEnter() {
-    console.log('Home组件内守卫---beforeRouteEnter，此时该组件实例还没有创建');
+    console.log('Home组件内守卫---beforeRouteEnter，此时该组件实例还没有创建')
   },
   beforeRouteUpdate() {
-    console.log('Home组件内守卫---beforeRouteUpdate，在当前路由改变，但是该组件被复用时调用');
+    console.log('Home组件内守卫---beforeRouteUpdate，在当前路由改变，但是该组件被复用时调用')
   },
   beforeRouteLeave() {
-    console.log('Home组件内守卫---beforeRouteLeave', '离开了该组件');
+    console.log('Home组件内守卫---beforeRouteLeave', '离开了该组件')
   },
   mounted() {
-    console.log('import.meta.env:', import.meta.env);
+    console.log('import.meta.env:', import.meta.env)
   },
   data() {
     return {
@@ -53,65 +53,71 @@ export default defineComponent({
       buttonData: [
         {
           path: '/reactive',
-          title: '响应式练习',
+          title: '响应式练习'
         },
         {
           path: '/computed',
-          title: '计算属性',
+          title: '计算属性'
         },
         {
           path: '/lifecycle',
-          title: '生命周期阶段',
+          title: '生命周期阶段'
         },
         {
           path: '/watch',
-          title: '侦听器',
+          title: '侦听器'
         },
         {
           path: '/domRef',
-          title: 'Dom引用',
+          title: 'Dom引用'
         },
         {
           path: '/pc',
-          title: '父子组件',
+          title: '父子组件'
         },
         {
           path: '/event',
-          title: '事件处理',
+          title: '事件处理'
         },
         {
           path: '/slot',
-          title: '插槽Slots',
+          title: '插槽Slots'
         },
         {
           path: '/compose',
-          title: '组合式函数复用',
+          title: '组合式函数复用'
         },
         {
           path: '/transition',
-          title: '过渡动画(Transition)',
+          title: '过渡动画(Transition)'
         },
         {
           path: '/transitionGroup',
-          title: '过渡动画(TransitionGroup)',
+          title: '过渡动画(TransitionGroup)'
         },
         {
           path: '/nestedRoute',
-          title: '嵌套路由的使用',
+          title: '嵌套路由的使用'
         },
         {
           path: '/gsap',
-          title: 'Gsap的使用',
-        },
+          title: 'Gsap的使用'
+        }
       ],
-    };
+      buttonData2: [
+        {
+          path: '/bigScreen',
+          title: '大屏适配方案'
+        }
+      ]
+    }
   },
   methods: {
     btnClick: function (path: string) {
-      this.$router.push(path);
-    },
-  },
-});
+      this.$router.push(path)
+    }
+  }
+})
 </script>
 
 <style scoped>
