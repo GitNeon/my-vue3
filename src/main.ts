@@ -1,30 +1,29 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-import * as echarts from 'echarts/core'
-import { bind, unbind } from '@/directive/chart-resize'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+import * as echarts from 'echarts/core';
+import { bind, unbind } from '@/directive/chart-resize';
+import App from './App.vue';
+import router from './router';
 
-import App from './App.vue'
-import router from './router'
+import '@/assets/style/base.css';
 
-import '@/assets/style/base.css'
+const app = createApp(App);
 
-const app = createApp(App)
+app.use(createPinia());
+app.use(router);
 
-app.use(createPinia())
-app.use(router)
-
-app.config.globalProperties.$echarts = echarts
-app.mount('#app')
+app.config.globalProperties.$echarts = echarts;
+app.mount('#app');
 
 // 全局的Provide提供依赖数据
-app.provide('username', 'admin')
-app.provide('password', '123456')
+app.provide('username', 'admin');
+app.provide('password', '123456');
 
 app.config.errorHandler = (err, vm, info) => {
-  console.log(err, vm, info)
-}
+  console.log(err, vm, info);
+};
 
 app.directive('chart-resize', {
   mounted: bind,
   unmounted: unbind
-})
+});

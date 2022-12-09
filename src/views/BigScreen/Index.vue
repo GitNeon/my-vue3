@@ -18,6 +18,9 @@
     <div style="margin-right: 20px">
       <el-button @click="go('/bigScreen/scale')">点我查看scale方案</el-button>
     </div>
+    <div style="margin-right: 20px">
+      <el-button @click="go('/bigScreen/vscale')">点我查看v-scale-screen插件方案</el-button>
+    </div>
   </div>
 </template>
 

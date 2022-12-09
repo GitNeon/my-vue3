@@ -114,6 +114,10 @@ const router = createRouter({
     {
       path: '/bigScreen/scale',
       component: () => import('../views/BigScreen/scale/Index.vue')
+    },
+    {
+      path: '/bigScreen/vscale',
+      component: () => import('../views/BigScreen/vScaleScreen/Index.vue')
     }
   ]
 });
