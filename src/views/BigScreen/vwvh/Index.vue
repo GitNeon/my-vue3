@@ -14,14 +14,17 @@
     </div>
     <div ref="barChart" v-chart-resize class="content"></div>
     <div ref="lineChart" v-chart-resize class="content"></div>
-    <div class="content"></div>
+    <div class="content">
+      <chart-dom />
+    </div>
   </main>
 </template>
 
 <script setup lang="ts">
 import * as echarts from 'echarts';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, onBeforeUnmount } from 'vue';
 import { getLineOption } from '@/views/BigScreen/vwvh/options/line-option';
+import ChartDom from '@/views/BigScreen/components/chartDom.vue';
 
 const barChart = ref<any>(null);
 const initBarChart = () => {
@@ -45,15 +48,36 @@ const initBarChart = () => {
 };
 
 const lineChart = ref<any>(null);
+
+let myChart = ref<any>(null);
+
 const initLineChart = () => {
-  let myChart = echarts.init(lineChart.value);
+  myChart = echarts.init(lineChart.value);
   let options = getLineOption();
-  myChart.setOption(options);
+  myChart.setOption(options, true);
 };
+
+const resizeFn = () => {
+  let options = getLineOption();
+  myChart.setOption(options, true);
+};
+
+let arr = [];
+
+for (let i = 0; i < 100000; i++) {
+  arr.push('A');
+}
 
 onMounted(() => {
   initBarChart();
   initLineChart();
+
+  // 如果需要实现随着屏幕缩放echarts字体
+  window.addEventListener('resize', resizeFn);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', resizeFn);
 });
 </script>
 

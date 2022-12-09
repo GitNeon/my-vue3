@@ -4,6 +4,8 @@
  * @Description: file content
  */
 
+import { fitChartSize } from '@/utils/EchartUtil';
+
 export const getLineOption = () => {
   return {
     grid: {
@@ -20,13 +22,16 @@ export const getLineOption = () => {
       data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
       splitNumber: 1,
       axisLabel: {
-        fontSize: 14
+        fontSize: fitChartSize(14)
       }
     },
     yAxis: {
       min: 13500,
       name: '单位(元)',
-      type: 'value'
+      type: 'value',
+      axisLabel: {
+        fontSize: fitChartSize(14)
+      }
     },
     series: [
       {
@@ -37,7 +42,8 @@ export const getLineOption = () => {
         },
         label: {
           show: true,
-          position: 'top'
+          position: 'top',
+          fontSize: fitChartSize(12)
         },
         markLine: {
           lineStyle: {

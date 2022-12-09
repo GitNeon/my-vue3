@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -9,7 +9,7 @@ const router = createRouter({
       name: 'Home',
       component: HomeView,
       beforeEnter: (to, from) => {
-        console.log('Home组件独享守卫---beforeEnter')
+        console.log('Home组件独享守卫---beforeEnter');
       }
     },
     {
@@ -110,11 +110,15 @@ const router = createRouter({
     {
       path: '/bigScreen/vwvh',
       component: () => import('../views/BigScreen/vwvh/Index.vue')
+    },
+    {
+      path: '/bigScreen/scale',
+      component: () => import('../views/BigScreen/scale/Index.vue')
     }
   ]
-})
+});
 
-console.log(router.getRoutes())
+console.log(router.getRoutes());
 
 /*router.beforeEach((to, from) => {
   console.log('全局前置守卫', 'beforeEach', to, from)
@@ -128,4 +132,4 @@ router.afterEach((to, from) => {
   console.log('全局后置守卫', 'afterEach', to, from)
 })*/
 
-export default router
+export default router;

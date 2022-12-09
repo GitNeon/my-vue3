@@ -12,16 +12,19 @@
         <el-table-column prop="qd" label="缺点" width="240" />
       </el-table>
     </div>
-    <div>
+    <div style="margin-right: 20px">
       <el-button @click="go('/bigScreen/vwvh')">点我查看vw-vh方案</el-button>
+    </div>
+    <div style="margin-right: 20px">
+      <el-button @click="go('/bigScreen/scale')">点我查看scale方案</el-button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router';
 
-const router = useRouter()
+const router = useRouter();
 
 const tableData = [
   {
@@ -44,13 +47,13 @@ const tableData = [
     yd: '1.布局的自适应代码量少，适配简单',
     qd: '1.因为是根据 ui 稿等比缩放，当大屏跟 ui 稿的比例不一样时，会出现周边留白情况 2.图表需要单个做字体、间距、位移的适配'
   }
-]
+];
 
 const go = (path: string) => {
   router.push({
     path: path
-  })
-}
+  });
+};
 </script>
 
 <style scoped>
