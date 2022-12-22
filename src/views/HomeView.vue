@@ -30,22 +30,22 @@
   </main>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script>
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Home',
   beforeRouteEnter() {
-    console.log('Home组件内守卫---beforeRouteEnter，此时该组件实例还没有创建')
+    console.log('Home组件内守卫---beforeRouteEnter，此时该组件实例还没有创建');
   },
   beforeRouteUpdate() {
-    console.log('Home组件内守卫---beforeRouteUpdate，在当前路由改变，但是该组件被复用时调用')
+    console.log('Home组件内守卫---beforeRouteUpdate，在当前路由改变，但是该组件被复用时调用');
   },
   beforeRouteLeave() {
-    console.log('Home组件内守卫---beforeRouteLeave', '离开了该组件')
+    console.log('Home组件内守卫---beforeRouteLeave', '离开了该组件');
   },
   mounted() {
-    console.log('import.meta.env:', import.meta.env)
+    console.log('import.meta.env:', import.meta.env);
   },
   data() {
     return {
@@ -110,14 +110,14 @@ export default defineComponent({
           title: '大屏适配方案'
         }
       ]
-    }
+    };
   },
   methods: {
-    btnClick: function (path: string) {
-      this.$router.push(path)
+    btnClick: function (path) {
+      this.$router.push(path);
     }
   }
-})
+});
 </script>
 
 <style scoped>
