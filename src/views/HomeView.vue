@@ -108,6 +108,10 @@ export default defineComponent({
         {
           path: '/bigScreen',
           title: '大屏适配方案'
+        },
+        {
+          path: '/ps-ui',
+          title: 'PristineUI测试使用'
         }
       ]
     };

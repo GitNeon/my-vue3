@@ -118,6 +118,10 @@ const router = createRouter({
     {
       path: '/bigScreen/vscale',
       component: () => import('../views/BigScreen/vScaleScreen/Index.vue')
+    },
+    {
+      path: '/ps-ui',
+      component: () => import('../views/PristineUI.vue')
     }
   ]
 });
