@@ -112,6 +112,10 @@ export default defineComponent({
         {
           path: '/ps-ui',
           title: 'PristineUI测试使用'
+        },
+        {
+          path: '/vs-form',
+          title: '可视化表单设计'
         }
       ]
     };

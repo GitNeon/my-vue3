@@ -122,6 +122,10 @@ const router = createRouter({
     {
       path: '/ps-ui',
       component: () => import('../views/PristineUI.vue')
+    },
+    {
+      path: '/vs-form',
+      component: () => import('../views/VisualizationForm/index.vue')
     }
   ]
 });
