@@ -5,6 +5,7 @@ import { bind, unbind } from '@/directive/chart-resize';
 import App from './App.vue';
 import router from './router';
 import PristineUI from 'pristine-ui';
+import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 
 import BqDesign from 'bq-design';
 import 'bq-design/dist/index.css';
@@ -15,6 +16,9 @@ import 'pristine-ui/dist/index.css';
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 
+import VueDraggableGrid from '@noction/vue-draggable-grid';
+import '@noction/vue-draggable-grid/styles';
+
 const app = createApp(App);
 
 app.use(createPinia());
@@ -22,6 +26,11 @@ app.use(router);
 app.use(PristineUI);
 app.use(BqDesign);
 app.use(ElementPlus);
+app.use(VueDraggableGrid);
+
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component);
+}
 
 app.config.globalProperties.$echarts = echarts;
 

@@ -6,6 +6,7 @@
         <el-menu default-active="1" @select="handleSelect">
           <el-menu-item index="1">自定义参数</el-menu-item>
           <el-menu-item index="2">自定义表头-拖拽生成</el-menu-item>
+          <el-menu-item index="3">Excel导入生成表头</el-menu-item>
         </el-menu>
       </el-aside>
       <el-main>
@@ -18,11 +19,13 @@
 <script setup lang="ts">
 import CustomParams from './custom-params.vue';
 import CustomTable from './custom-table.vue';
+import LocalExcel from './local-excel.vue';
 import { ref } from 'vue';
 
 const componentMap: any = {
   CustomParams,
-  CustomTable
+  CustomTable,
+  LocalExcel
 };
 const _name = ref('CustomParams');
 
@@ -34,6 +37,10 @@ const handleSelect = (key: string, keyPath: string[]) => {
     }
     case '2': {
       _name.value = 'CustomTable';
+      break;
+    }
+    case '3': {
+      _name.value = 'LocalExcel';
       break;
     }
     default:
