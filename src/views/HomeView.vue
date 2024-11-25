@@ -116,6 +116,14 @@ export default defineComponent({
         {
           path: '/vs-form',
           title: '可视化表单设计'
+        },
+        {
+          path: '/date-picker-panel',
+          title: '日期组件面板'
+        },
+        {
+          path: '/onlineOffice',
+          title: 'onlyOffice测试使用'
         }
       ]
     };

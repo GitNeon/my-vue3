@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import { read } from 'xlsx';
-import { getSheetCells } from './util/core-parse.js';
+import { getSheetCells, transformCellsToTableHeader } from './util/core-parse.js';
 
 // 用于存储表头信息的数组
 const headers = [];
@@ -27,6 +27,7 @@ async function handleBeforeUpload(file: any) {
   console.log(worksheet);
   const allCells = getSheetCells(worksheet);
   console.log('allCells', allCells);
+  const header = transformCellsToTableHeader(allCells);
 }
 </script>
 

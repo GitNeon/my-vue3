@@ -126,6 +126,14 @@ const router = createRouter({
     {
       path: '/vs-form',
       component: () => import('../views/VisualizationForm/index.vue')
+    },
+    {
+      path: '/date-picker-panel',
+      component: () => import('../views/DatePickerPanel/index.vue')
+    },
+    {
+      path: '/onlineOffice',
+      component: () => import('../views/OnlineOffice/index.vue')
     }
   ]
 });
