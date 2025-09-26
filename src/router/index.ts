@@ -134,6 +134,10 @@ const router = createRouter({
     {
       path: '/onlineOffice',
       component: () => import('../views/OnlineOffice/index.vue')
+    },
+    {
+      path: '/growing-tree',
+      component: () => import('../views/GrowingTree/test.vue')
     }
   ]
 });

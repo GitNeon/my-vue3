@@ -124,6 +124,10 @@ export default defineComponent({
         {
           path: '/onlineOffice',
           title: 'onlyOffice测试使用'
+        },
+        {
+          path: '/growing-tree',
+          title: '生长树demo'
         }
       ]
     };

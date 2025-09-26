@@ -1,0 +1,15 @@
+<svg viewBox="0 0 16 17.4808" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16.000000" height="17.480774" fill="none" customFrame="#000000">
+	<defs>
+		<linearGradient id="paint_linear_normal" x1="8" x2="8.24681282" y1="0" y2="20.6565609" gradientUnits="userSpaceOnUse">
+			<stop stop-color="rgb(255,255,255)" offset="0" stop-opacity="1" />
+			<stop stop-color="rgb(115,184,255)" offset="0.506329119" stop-opacity="1" />
+			<stop stop-color="rgb(35,142,253)" offset="0.987341762" stop-opacity="1" />
+		</linearGradient>
+		<linearGradient id="paint_linear_danger" x1="12" x2="12.3702192" y1="0" y2="14.4000015" gradientUnits="userSpaceOnUse">
+			<stop stop-color="rgb(255,255,255)" offset="0" stop-opacity="1" />
+			<stop stop-color="rgb(250,147,147)" offset="0.54938817" stop-opacity="1" />
+			<stop stop-color="rgb(224,73,73)" offset="0.974683523" stop-opacity="1" />
+		</linearGradient>
+	</defs>
+	<path id="矢量 189" d="M6.2034 16.1984L6.2034 11.2404L2.41569 11.2404L2.41569 6.27172L6.2034 6.27172L6.2034 1.28276C6.2034 0.577221 5.6265 0 4.92105 0L1.28235 0C0.576891 0 0 0.577221 0 1.28276L0 16.1984C0 16.9037 0.577551 17.4806 1.28235 17.4806L4.92105 17.4806C5.6265 17.4806 6.2034 16.9039 6.2034 16.1984ZM14.6583 0L13.7636 0C13.0252 0 12.4213 0.603799 12.4213 1.34247L12.4213 16.1383C12.4213 16.8771 13.0252 17.4808 13.7636 17.4808L14.6583 17.4808C15.3961 17.4808 16 16.8769 16 16.1383L16 1.34247C16 0.603593 15.3961 0 14.6583 0ZM7.52992 12.2052L7.52992 9.94318L3.7132 9.92397L3.7132 7.58781L7.52992 7.60701L7.52992 5.30715L12.1378 8.75622L9.83418 10.4808L7.52992 12.2052Z" fill="url(#paint_linear_normal)" fill-rule="evenodd" />
+</svg>
