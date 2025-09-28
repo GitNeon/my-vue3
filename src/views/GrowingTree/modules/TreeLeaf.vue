@@ -63,6 +63,7 @@ export default {
       return iconMap[key];
     },
     handleTreeLeafClick(nodeData) {
+      window['growingTreeNodeData'] = nodeData;
       this.$emit('treeLeafClick', nodeData);
     }
   }
@@ -71,7 +72,7 @@ export default {
 
 <template>
   <div :style="{ bottom: offsetHeight + 'px' }" :class="['leaf-item', direction, nodeData.status]">
-    <div class="content" @click="handleTreeLeafClick(nodeData)">
+    <div class="content" @click.stop="handleTreeLeafClick(nodeData)">
       <div class="title">{{ nodeData.title || '--' }} {{ nodeData.eventCount || '' }}</div>
       <div class="sub-title">{{ nodeData.subTitle || '--' }}</div>
       <div class="date">{{ nodeData.date || '--' }}</div>
@@ -86,6 +87,7 @@ export default {
   width: 175px;
   height: 224px;
   cursor: pointer;
+  pointer-events: auto;
 }
 
 .leaf-item.left {

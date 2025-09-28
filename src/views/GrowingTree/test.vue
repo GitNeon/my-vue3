@@ -75,12 +75,9 @@ export default {
     };
   },
   methods: {
-    handleTreeClick(data) {
-      // 特别注意：由于div的叠加显示，可能会导致重复触发两次事件，此时，需要判断数据格式
-      if (data && data.title) {
-        alert('点击了叶子, 并正确触发数据格式');
-        console.log(data);
-      }
+    handleTreeClick() {
+      const nodeData = window['growingTreeNodeData'];
+      console.log('叶子数据：', nodeData);
     }
   }
 };
