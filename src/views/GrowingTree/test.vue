@@ -75,8 +75,7 @@ export default {
     };
   },
   methods: {
-    handleTreeClick() {
-      const nodeData = window['growingTreeNodeData'];
+    handleTreeClick(nodeData) {
       console.log('叶子数据：', nodeData);
     }
   }

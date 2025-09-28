@@ -42,6 +42,7 @@ export default {
           :offset-height="60 * index"
           :color="getColor(item.status)"
           :nodeData="item"
+          :level="index + 2"
           @tree-leaf-click="handleLeafClick"
         ></tree-leaf>
         <div class="base-line"></div>

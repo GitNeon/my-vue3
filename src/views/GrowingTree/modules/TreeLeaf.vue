@@ -53,6 +53,13 @@ export default {
     nodeData: {
       type: Object,
       default: () => ({})
+    },
+    /**
+     * 层级
+     */
+    level: {
+      type: Number,
+      default: 2
     }
   },
   methods: {
@@ -63,7 +70,6 @@ export default {
       return iconMap[key];
     },
     handleTreeLeafClick(nodeData) {
-      window['growingTreeNodeData'] = nodeData;
       this.$emit('treeLeafClick', nodeData);
     }
   }
@@ -72,8 +78,10 @@ export default {
 
 <template>
   <div :style="{ bottom: offsetHeight + 'px' }" :class="['leaf-item', direction, nodeData.status]">
-    <div class="content" @click.stop="handleTreeLeafClick(nodeData)">
-      <div class="title">{{ nodeData.title || '--' }} {{ nodeData.eventCount || '' }}</div>
+    <div class="content" :style="{ zIndex: level }">
+      <div class="title" @click.stop="handleTreeLeafClick(nodeData)">
+        {{ nodeData.title || '--' }} {{ nodeData.eventCount || '' }}
+      </div>
       <div class="sub-title">{{ nodeData.subTitle || '--' }}</div>
       <div class="date">{{ nodeData.date || '--' }}</div>
     </div>
@@ -113,9 +121,9 @@ export default {
 }
 
 .content {
+  position: absolute;
   width: 96px;
   height: 91px;
-  z-index: 2;
   text-align: center;
   color: white;
 }
