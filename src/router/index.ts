@@ -138,6 +138,14 @@ const router = createRouter({
     {
       path: '/growing-tree',
       component: () => import('../views/GrowingTree/test.vue')
+    },
+    {
+      path: '/tableHeader',
+      component: () => import('../views/SuperTableHeader/index.vue')
+    },
+    {
+      path: '/tableHeader2',
+      component: () => import('../views/SuperTableHeader/opti/index.vue')
     }
   ]
 });

@@ -9,6 +9,7 @@ export default {
   },
   data() {
     return {
+      showTooltip: false,
       treeConfig: {
         xAxis: {
           name: '累计纳税金额',
@@ -76,7 +77,12 @@ export default {
   },
   methods: {
     handleTreeClick(nodeData) {
-      console.log('叶子数据：', nodeData);
+      if (nodeData.type === 'bottom-line') {
+        console.log('点击了底部横线');
+      } else {
+        console.log('叶子数据：', nodeData);
+      }
+      this.showTooltip = true;
     }
   }
 };
@@ -85,6 +91,13 @@ export default {
 <template>
   <div style="width: fit-content; height: fit-content; padding: 20px">
     <GrowingTree :config="treeConfig" @tree-click="handleTreeClick"></GrowingTree>
+    <el-dialog title="收货地址" :visible="showTooltip">
+      <el-table :data="[]">
+        <el-table-column property="date" label="日期" width="150"></el-table-column>
+        <el-table-column property="name" label="姓名" width="200"></el-table-column>
+        <el-table-column property="address" label="地址"></el-table-column>
+      </el-table>
+    </el-dialog>
   </div>
 </template>
 

@@ -45,7 +45,7 @@ export default {
           :level="index + 2"
           @tree-leaf-click="handleLeafClick"
         ></tree-leaf>
-        <div class="base-line"></div>
+        <div class="base-line" @click.stop="handleLeafClick({ type: 'bottom-line' })"></div>
       </div>
     </foreignObject>
   </g>
@@ -67,6 +67,8 @@ export default {
   background-color: rgb(62, 152, 255);
   left: 50%;
   transform: translateX(-50%);
+  z-index: 10;
+  cursor: pointer;
 }
 
 text {

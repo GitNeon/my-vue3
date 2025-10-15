@@ -128,6 +128,14 @@ export default defineComponent({
         {
           path: '/growing-tree',
           title: '生长树demo'
+        },
+        {
+          path: '/tableHeader',
+          title: '复杂表头生成'
+        },
+        {
+          path: '/tableHeader2',
+          title: '复杂表头生成优化版'
         }
       ]
     };

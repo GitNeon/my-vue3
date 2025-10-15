@@ -16,6 +16,9 @@ export default {
     GrowingTreeContainer,
     GrowingTreeAxis
   },
+  data() {
+    return {};
+  },
   methods: {
     handleTreeContentClick(data) {
       this.$emit('tree-click', data);
@@ -34,7 +37,16 @@ export default {
         <TreeContent :list="config.treeList" @tree-click="handleTreeContentClick" />
       </template>
     </GrowingTreeContainer>
-    <div class="other-content">其他区域内容</div>
+    <div class="other-content">
+      <div class="legend">
+        <div class="rect normal"></div>
+        <div>基础事项</div>
+      </div>
+      <div class="legend">
+        <div class="rect danger"></div>
+        <div>风险事项</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -47,10 +59,31 @@ export default {
 
 .other-content {
   position: absolute;
+  display: flex;
+  gap: 10px;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 80px;
   text-align: center;
   z-index: 2;
+  font-size: 12px;
+}
+
+.legend {
+  display: flex;
+  font-size: 12px;
+  gap: 4px;
+  align-items: center;
+}
+
+.rect.normal {
+  width: 12px;
+  height: 12px;
+  background-color: #409eff;
+}
+
+.rect.danger {
+  width: 12px;
+  height: 12px;
+  background-color: #f56c6c;
 }
 </style>

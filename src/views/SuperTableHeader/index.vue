@@ -1,0 +1,85 @@
+<script setup lang="js">
+import { nextTick, ref } from 'vue';
+
+const tableData = ref([])
+
+// 定义一个配置数组，包含要特殊处理的列信息
+const columnRules = [
+  { prop: 'hj_flag', rowspan: 3 },
+  { prop: 'hj', hide: true },
+  { prop: 'wjh_flag', rowspan: 2 },
+  { prop: 'wjh', hide: true },
+]
+
+const headerStyle = (headerConfig) => {
+  console.log('headerConfig: ', headerConfig);
+  const { row, column, rowIndex, columnIndex } = headerConfig
+
+  nextTick(() => {
+    columnRules.forEach(rule => {
+      if (column.property === rule.prop) {
+        const domColumn = document.getElementsByClassName(column.id)
+        if (domColumn.length > 0) {
+          if (rule.rowspan) {
+            domColumn[0].setAttribute('rowspan', rule.rowspan)
+          }
+          if (rule.hide) {
+            domColumn[0].setAttribute('style', 'display: none')
+          }
+        }
+      }
+    })
+  })
+
+  return { textAlign: 'center' }
+}
+</script>
+
+<template>
+  <div class="container">
+    <el-table :data="tableData" hea border style="width: 100%" ref="tableRef" :header-cell-style="headerStyle">
+      <el-table-column prop="key1" label="单位" width="100" />
+      <el-table-column prop="hj_flag" label="合计" rolspan="2" width="200">
+        <el-table-column prop="hj" label="合计" rolspan="2" width="200">
+          <el-table-column prop="hj" label="合计" rolspan="2" width="200">
+            <el-table-column prop="hj2" label="1=2+3+4+5+6" width="200" />
+          </el-table-column>
+        </el-table-column>
+      </el-table-column>
+      <el-table-column prop="dsdw" label="应参加税务代收单位" width="300">
+        <!-- col 1 -->
+        <el-table-column prop="yjh" label="已建会" width="120">
+          <el-table-column prop="ddjh" label="单独基层工会" width="120">
+            <el-table-column prop="number2" label="2" width="120" />
+          </el-table-column>
+          <el-table-column prop="lhgh" label="联合工会" width="120">
+            <el-table-column prop="number3" label="3" width="120" />
+          </el-table-column>
+        </el-table-column>
+        <!-- col 2 -->
+        <el-table-column prop="yjhcbz" label="已建会筹备中" width="120">
+          <el-table-column prop="yjhcbz_ddjh" label="单独基层工会" width="120">
+            <el-table-column prop="number3" label="4" width="120" />
+          </el-table-column>
+        </el-table-column>
+        <!-- col 3 -->
+        <el-table-column prop="yjhsjzj" label="已建会上级组建" width="120">
+          <el-table-column prop="yjhsjzj_lhgh" label="联合工会" width="120">
+            <el-table-column prop="number5" label="5" width="120" />
+          </el-table-column>
+        </el-table-column>
+        <el-table-column prop="wjh_flag" label="未见会" width="100">
+          <el-table-column prop="wjh" label="未见会" width="100">
+            <el-table-column prop="number6" label="6" width="120" />
+          </el-table-column>
+        </el-table-column>
+      </el-table-column>
+    </el-table>
+  </div>
+</template>
+
+<style scoped>
+.container {
+  padding: 8px;
+}
+</style>
