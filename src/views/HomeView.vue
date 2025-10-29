@@ -136,6 +136,10 @@ export default defineComponent({
         {
           path: '/tableHeader2',
           title: '复杂表头生成优化版'
+        },
+        {
+          path: '/backend-layout',
+          title: '后台管理布局'
         }
       ]
     };

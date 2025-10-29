@@ -146,6 +146,10 @@ const router = createRouter({
     {
       path: '/tableHeader2',
       component: () => import('../views/SuperTableHeader/opti/index.vue')
+    },
+    {
+      path: '/backend-layout',
+      component: () => import('../views/BackendLayout/index.vue')
     }
   ]
 });
